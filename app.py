@@ -38,18 +38,18 @@ if args.create:
     result = collection.insert_one(document)
     if result.inserted_id:
         print(
-            f"Created new investor info!\ncode: {code}, Name: {args.name}, Info: {args.info}"
+            f"Created new investor info!\ncode: {code}\nName: {args.name}\nInfo: {args.info}"
         )
+else:
+    documents = [
+        {"code": f"{v.get("code")}", "name": v.get("name"), "info": v.get("info")}
+        for v in documents
+        if v.get("code")
+    ]
 
-documents = [
-    {"code": f"{v.get("code")}", "name": v.get("name"), "info": v.get("info")}
-    for v in documents
-    if v.get("code")
-]
-
-# Process and print the documents
-document = {"code": "Code", "name": "Name", "info": "Info"}
-documents.insert(0, document)
-print(tabulate(documents, headers="firstrow", tablefmt="grid"))
+    # Process and print the documents
+    document = {"code": "Code", "name": "Name", "info": "Info"}
+    documents.insert(0, document)
+    print(tabulate(documents, headers="firstrow", tablefmt="grid"))
 
 client.close()

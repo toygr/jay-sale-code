@@ -1,5 +1,7 @@
 # How to run this script?
-You should have python installed.
+> You should have python installed.
+
+> Create .env file with correct MONGODB_URL
 ## Create virtual env
 ```
 python -m venv env

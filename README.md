@@ -23,3 +23,5 @@ python app.py
 ```
 python app.py --create --name "Investor Name" --info "Additional info here"
 ```
+# Result example
+![image](https://github.com/user-attachments/assets/71aa5e10-8cb3-4377-96e8-047d644d187e)
